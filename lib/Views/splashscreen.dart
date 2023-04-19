@@ -3,18 +3,30 @@ import 'package:flutter/material.dart';
 import 'package:tour_friend/Views/homescreen.dart';
 import 'package:tour_friend/welcome.dart';
 import 'package:tour_friend/Views/servicescreen.dart';
+import 'dart:math';
 
 class SplashScreen extends StatefulWidget {
   @override
   _SplashScreenState createState() => _SplashScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen> {
+class _SplashScreenState extends State<SplashScreen>
+    with TickerProviderStateMixin {
+  late final AnimationController _controller = AnimationController(
+    vsync: this,
+    duration: const Duration(seconds: 10),
+  )..repeat();
+
   @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
   void initState() {
     super.initState();
     Timer(
-      const Duration(seconds: 3),
+      const Duration(seconds: 10),
       () => Navigator.of(context).pushReplacement(
         MaterialPageRoute(
           builder: (BuildContext context) => const HomePage(),
@@ -36,9 +48,18 @@ class _SplashScreenState extends State<SplashScreen> {
             height: 100,
           ),
           Center(
-            child: CircleAvatar(
-              backgroundImage: AssetImage("assets/tour.png"),
-              radius: 100,
+            child: AnimatedBuilder(
+              animation: _controller,
+              builder: (BuildContext context, Widget? child) {
+                return Transform.rotate(
+                  angle: _controller.value * 2 * pi,
+                  child: child,
+                );
+              },
+              child: CircleAvatar(
+                backgroundImage: AssetImage("assets/tour.png"),
+                radius: 100,
+              ),
             ),
             // child: Image.asset('assets/tour.png'),
           ),
