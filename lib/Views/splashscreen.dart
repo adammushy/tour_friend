@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:tour_friend/Views/homescreen.dart';
-import 'package:tour_friend/welcome.dart';
+import 'package:tour_friend/Views/welcome.dart';
 import 'package:tour_friend/Views/servicescreen.dart';
 import 'dart:math';
 
@@ -29,7 +29,7 @@ class _SplashScreenState extends State<SplashScreen>
       const Duration(seconds: 10),
       () => Navigator.of(context).pushReplacement(
         MaterialPageRoute(
-          builder: (BuildContext context) => const HomePage(),
+          builder: (BuildContext context) => const Welcome(),
         ),
       ),
     );

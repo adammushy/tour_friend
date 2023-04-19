@@ -22,7 +22,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   List<IconData> icons = [
     FontAwesomeIcons.landmarkDome,
     // FontAwesomeIcons.pet,
-    Icons.pets,
+    Icons.pets, 
     Icons.forest,
     FontAwesomeIcons.mountain,
     // FontAwesomeIcons.plane,
@@ -152,7 +152,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
         "Where would you like to visit",
         style: Theme.of(context)
             .textTheme
-            .headline5
+            .headlineSmall
             ?.copyWith(fontWeight: FontWeight.bold),
       ),
     );

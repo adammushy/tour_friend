@@ -2,7 +2,7 @@ import 'package:bubble_bottom_bar/bubble_bottom_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:tour_friend/Views/homescreen.dart';
-import 'package:tour_friend/welcome.dart';
+import 'package:tour_friend/Views/welcome.dart';
 import 'package:tour_friend/Views/nationalparkscreen.dart';
 import 'package:tour_friend/Views/historicalsite.dart';
 // import 'package:tour_friend/Views/homescreen.dart';
