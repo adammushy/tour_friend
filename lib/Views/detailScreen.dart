@@ -32,7 +32,7 @@ class DetailScreen extends StatelessWidget {
               child: Text(
                 name,
                 style: TextStyle(
-                    fontSize: 32,
+                    fontSize: 40,
                     fontWeight: FontWeight.bold,
                     color: Color.fromARGB(255, 8, 248, 20)),
               ),
@@ -40,13 +40,38 @@ class DetailScreen extends StatelessWidget {
             SizedBox(
               height: 16.0,
             ),
-            Hero(
-              tag: imageUrl,
-              child: Container(
-                  height: 200, width: 200, child: Image.asset(imageUrl)),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Hero(
+                tag: imageUrl,
+                child: Container(
+                  height: 300,
+                  width: 300,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(32.0),
+                    image: DecorationImage(
+                        image: AssetImage(imageUrl), fit: BoxFit.cover),
+                  ),
+                  // child: Image.asset(imageUrl),
+                ),
+              ),
             ),
             SizedBox(
               height: 16.0,
+            ),
+            Center(
+              child: Text(
+                location,
+                style: TextStyle(color: Colors.black,
+                                fontSize: 24,
+                                ),
+              ),
+            ),SizedBox(height: 16.0,),
+            Center(
+              child: SizedBox(
+                width: MediaQuery.of(context).size.width - 52.0,
+                child: Text(details),
+              ),
             )
           ],
         )
