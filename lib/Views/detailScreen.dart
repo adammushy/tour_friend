@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
@@ -10,26 +9,57 @@ class DetailScreen extends StatelessWidget {
   final String location;
   final String imageUrl;
   final String details;
- 
-  const DetailScreen({super.key,
+
+  const DetailScreen({
+    super.key,
     required this.name,
     required this.location,
     required this.imageUrl,
-    required this.details,});
- 
+    required this.details,
+  });
 
- 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Column(children: [
-      
-      Text(name),
-      Image.asset(imageUrl),
-          Text(location),
-          Text(details)
+    return Scaffold(
+        appBar: null,
+        body: ListView(
+          children: [
+            SizedBox(
+              height: 20,
+            ),
+            Padding(
+              padding: EdgeInsets.all(16.0),
+              child: Text(
+                name,
+                style: TextStyle(
+                    fontSize: 32,
+                    fontWeight: FontWeight.bold,
+                    color: Color.fromARGB(255, 8, 248, 20)),
+              ),
+            ),
+            SizedBox(
+              height: 16.0,
+            ),
+            Hero(
+              tag: imageUrl,
+              child: Container(
+                  height: 200, width: 200, child: Image.asset(imageUrl)),
+            ),
+            SizedBox(
+              height: 16.0,
+            )
+          ],
+        )
 
-    ],),);
+        // Column(children: [
+
+        //   // Text(name),
+        //   // Image.asset(imageUrl),
+        //   //     Text(location),
+        //   //     Text(details)
+
+        // ],
+        // ),
+        );
   }
-  
-
 }

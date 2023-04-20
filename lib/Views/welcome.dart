@@ -14,6 +14,7 @@ class _WelcomeState extends State<Welcome> {
   Widget build(BuildContext context) {
     // WelcomeContents welcomeContents = welcomecontents;
     return Scaffold(
+      // appBar: ,
       body: Column(children: [
         Text(welcomecontents[0].heading),
         SizedBox(
