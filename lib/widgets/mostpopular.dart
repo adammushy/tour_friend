@@ -87,6 +87,7 @@ class _MostPopularState extends State<MostPopular> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
+          
             "",
             // "${destination.name}",
             style: Theme.of(context)
