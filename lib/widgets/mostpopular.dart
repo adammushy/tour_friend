@@ -29,13 +29,13 @@ class _MostPopularState extends State<MostPopular> {
                     .headlineSmall
                     ?.copyWith(fontWeight: FontWeight.bold),
               ),
-              Text(
-                "See all",
-                style: Theme.of(context)
-                    .textTheme
-                    .titleLarge
-                    ?.copyWith(fontWeight: FontWeight.bold),
-              ),
+              // Text(
+              //   "See all",
+              //   style: Theme.of(context)
+              //       .textTheme
+              //       .titleLarge
+              //       ?.copyWith(fontWeight: FontWeight.bold),
+              // ),
             ],
           ),
         ),
@@ -140,26 +140,42 @@ class _MostPopularState extends State<MostPopular> {
         ], color: Colors.white, borderRadius: BorderRadius.circular(20)),
         child: Padding(
           padding: const EdgeInsets.only(left: 8.0, bottom: 10),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            crossAxisAlignment: CrossAxisAlignment.start,
+          child: Row(
+            // crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-               Text(
-            // " ",
-            "${destination.name}",
-            style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                color: Color.fromARGB(255, 8, 8, 8), fontWeight: FontWeight.bold),
-          ), Text(
-            // " ",
-            "${destination.city}",
-            style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                color: Color.fromARGB(255, 8, 8, 8), fontWeight: FontWeight.bold),
-          ),
-              // Text(
-              //   "${destination.description}",
-              //   style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-              //       color: Colors.black, fontWeight: FontWeight.w600),
-              // ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                   Text(
+                // " ",
+                "${destination.name}",
+                style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                    color: Color.fromARGB(255, 8, 8, 8), fontWeight: FontWeight.bold),
+              ), Text(
+                // " ",
+                "${destination.city}",
+                style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                    color: Color.fromARGB(255, 8, 8, 8), fontWeight: FontWeight.bold),
+              ),
+                  // Text(
+                  //   "${destination.description}",
+                  //   style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                  //       color: Colors.black, fontWeight: FontWeight.w600),
+                  // ),
+                ],
+              ),
+              SizedBox(width: 2,),
+
+              Column(
+                 mainAxisAlignment: MainAxisAlignment.end,
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                 
+                  IconButton(onPressed: (){return null;}, icon:Icon(Icons.shopping_cart,semanticLabel: "Book",)),
+                ],
+              )
             ],
           ),
         ),

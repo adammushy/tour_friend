@@ -21,7 +21,7 @@ class ItemList extends StatelessWidget {
           Padding(
             padding: EdgeInsets.all(16.0),
             child: Text(
-              name,
+              name.toUpperCase(),
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
@@ -35,7 +35,7 @@ class ItemList extends StatelessWidget {
           context,
           MaterialPageRoute(
             builder: (context) => DetailScreen(
-              name: name,
+              name: name.toUpperCase(),
               details: details,
               imageUrl: imageUrl,
               location: location,
