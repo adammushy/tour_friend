@@ -146,6 +146,7 @@ class _DetailScreenState extends State<DetailScreen> {
                       Padding(
                         padding: EdgeInsets.only(top: 10, bottom: 10),
                         child: DropdownButtonFormField(
+                          hint: Text("Choose Payment method"),
                           onChanged: (newValue) {
                             setState() {
                               paymentMethod = newValue.toString();

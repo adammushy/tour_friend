@@ -49,7 +49,7 @@ class _ServiceScreenState extends State<ServiceScreen> {
               children: [
                 Center(
                   child: InkWell(
-                    child: Image.asset(
+                    child: Image.asset(semanticLabel:"List Category" ,
                       'assets/tour.png',
                       height: 100,
                       width: 100,

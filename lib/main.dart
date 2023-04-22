@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tour_friend/Views/homescreen.dart';
 import 'package:tour_friend/Views/servicescreen.dart';
 import 'package:tour_friend/Views/splashscreen.dart';
+import './Views/welcome.dart';
 
 
 void main() {
@@ -18,6 +19,7 @@ class MyApp extends StatelessWidget {
       title: 'Tour Friend',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        appBarTheme: AppBarTheme(),
         // This is the theme of your application.
         //
         // Try running your application with "flutter run". You'll see the
@@ -27,8 +29,17 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.amber,
       ),
+// darkTheme: ThemeData.dark(useMaterial3:  ,),
+        // initialRoute: '/first',  
+        // routes: {  
+        //   // When navigating to the "/" route, build the HomeScreen widget.  
+        //   '/first': (context) => SplashScreen(),  
+        //   // When navigating to the "/second" route, build the SecondScreen widget.  
+        //   '/second': (context) => Welcome(),  
+        //   '/third':(context) => HomePage(),
+        // },  
       home: SplashScreen(),
     );
   }

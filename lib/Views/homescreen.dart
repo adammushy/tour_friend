@@ -1,9 +1,12 @@
 import 'package:bubble_bottom_bar/bubble_bottom_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:tour_friend/Views/nationalparkscreen.dart';
 import 'package:tour_friend/Views/servicescreen.dart';
 import 'package:tour_friend/Views/historicalsite.dart';
+import 'package:tour_friend/Views/welcome.dart';
 import '../widgets/mostpopular.dart';
+import '../Components/homecontent.dart';
 // import 'package:travel_ui/widgets/destinations.dart';
 // import 'package:travel_ui/widgets/hotel.dart';
 
@@ -15,6 +18,29 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
+  // Future<bool> _onWillPop() async {
+  //   return (await showDialog(
+  //         context: context,
+  //         builder: (context) => AlertDialog(
+  //           title: new Text('Are you sure?'),
+  //           content: new Text('Do you want to exit an App'),
+  //           actions: <Widget>[
+  //             TextButton(
+  //               onPressed: () =>
+  //                   Navigator.of(context).pop(false), //<-- SEE HERE
+  //               child: new Text('No'),
+  //             ),
+  //             TextButton(
+  //               onPressed: () =>
+  //                   Navigator.of(context).pop(true), // <-- SEE HERE
+  //               child: new Text('Yes'),
+  //             ),
+  //           ],
+  //         ),
+  //       )) ??
+  //       false;
+  // }
+
   late int _currentIndex;
   int _selected = 0;
   final double _notchedValue = 5;
@@ -22,11 +48,12 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   List<IconData> icons = [
     FontAwesomeIcons.landmarkDome,
     // FontAwesomeIcons.pet,
-    Icons.pets, 
+    // Icons.pets,
+    FontAwesomeIcons.bed,
+
     Icons.forest,
     FontAwesomeIcons.mountain,
     // FontAwesomeIcons.plane,
-    // FontAwesomeIcons.bed,
     // FontAwesomeIcons.personWalking,
     // FontAwesomeIcons.personBiking
   ];
@@ -53,35 +80,46 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
 // ####################MAIN SCREEN SCAFFOLD
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      extendBody: true,
-      body: SafeArea(
+    return WillPopScope(
+      onWillPop: () async {
+        return false;
+      },
+      child: Scaffold(
+        extendBody: true,
+        body: SafeArea(
           child: ListView(
-        children: [
-          _buildTitle(context),
-          const SizedBox(
-            height: 20.0,
+            children: [
+              _buildTitle(context),
+              const SizedBox(
+                height: 20.0,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: icons
+                    .asMap()
+                    .entries
+                    .map((e) => _buildIcon(e.key))
+                    .toList(),
+              ),
+              const SizedBox(
+                height: 20.0,
+              ),
+              const MostPopular(),
+              const SizedBox(
+                height: 20.0,
+              ),
+              const HotelWidget(),
+              // WillPopScope(child: Welcome(), onWillPop:  () async => Future.value(false),),
+            ],
           ),
-          Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children:
-                  icons.asMap().entries.map((e) => _buildIcon(e.key)).toList()),
-          const SizedBox(
-            height: 20.0,
-          ),
-          const MostPopular(),
-          const SizedBox(
-            height: 20.0,
-          ),
-          // const HotelWidget()
-        ],
-      )),
-      floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
-      floatingActionButton: FloatingActionButton(
-          backgroundColor: ColorItems.blueChaose,
-          onPressed: () {},
-          child: const Icon(Icons.search)),
-      bottomNavigationBar: _buildBottomBar(),
+        ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
+        floatingActionButton: FloatingActionButton(
+            backgroundColor: ColorItems.blueChaose,
+            onPressed: () {},
+            child: const Icon(Icons.search)),
+        bottomNavigationBar: _buildBottomBar(),
+      ),
     );
   }
 
@@ -177,6 +215,15 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                   context,
                   MaterialPageRoute(
                     builder: (context) => HistoricalSite(),
+                  ),
+                );
+              }
+              else if (index == 2){
+                
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => NationalParkScreen(),
                   ),
                 );
               }

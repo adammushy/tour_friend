@@ -6,16 +6,25 @@ import 'package:tour_friend/Views/servicescreen.dart';
 import 'dart:math';
 
 class SplashScreen extends StatefulWidget {
+//  final int loginCount;
+//  const SplashScreen({
+//     super.key,
+//     required this.loginCount
+
+//  });
   @override
   _SplashScreenState createState() => _SplashScreenState();
 }
 
 class _SplashScreenState extends State<SplashScreen>
     with TickerProviderStateMixin {
+  // late final int loginCount;
   late final AnimationController _controller = AnimationController(
     vsync: this,
     duration: const Duration(seconds: 10),
   )..repeat();
+  
+  // get loginCount => null;
 
   @override
   void dispose() {
@@ -37,6 +46,13 @@ class _SplashScreenState extends State<SplashScreen>
 
   @override
   Widget build(BuildContext context) {
+    // String myRoute;
+    // if (loginCount == 0) // globally defined variable
+    //   myRoute = '/second';
+    // else
+    //   myRoute = '/third';
+    // Navigator.pushNamed(context, myRoute);
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: Column(

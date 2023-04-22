@@ -14,12 +14,16 @@ class _NationalParkScreenState extends State<NationalParkScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text("National Parks"),
+        // actionsIconTheme: IconThemeData(fill: double.infinity),
+      ),
       body: SafeArea(
           child: ListView(
         children: [
           ItemList(
             name: "maharaja",
-            imageUrl: "assets/images.tour.png",
+            imageUrl: "assets/images/tour.png",
             location: "India",
             details: "holla",
           )

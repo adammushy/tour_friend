@@ -17,26 +17,42 @@ class _HistoricalSiteState extends State<HistoricalSite> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+          title: Text('Historical site'),
+        ),
         body: SafeArea(
             child: ListView(
-      children: [
-        listItems(
-              name: "mahale",
-              imageUrl: "assets/images/tour.png",
-              location: "Tanga",
-              details: "hellow tanzania"),
-      
-        listItems(
-          name: "",
-          imageUrl: "",
-        ),
-        listItems(name: "", imageUrl: "",),
-        listItems(name: "", imageUrl: ""),
-        listItems(name: "", imageUrl: ""),
-      ],
-    )));
+          children: [
+            listItems(
+                name: "mahale",
+                imageUrl: "assets/images/tour.png",
+                location: "Tanga",
+                details: "hellow tanzania"),
+
+            // listItems(
+            //   name: "",
+            //   imageUrl: "",
+            // ),
+            listItems(
+                name: "Bagamoyo",
+                imageUrl: "assets/images/tour.png",
+                details: "msoga oner",
+                location: "Dar es salaam"),
+            listItems(
+                name: "Baitu la Ajabu",
+                imageUrl: "assets/images/tour.png",
+                location: "Zanzibar",
+                details: "karibu zanzibar"),
+            listItems(
+                name: "Kondoa Irangi",
+                imageUrl: "assets/images/tour.png",
+                location: "Dodoma",
+                details: "michorro ya mapangoni"),
+          ],
+        )));
   }
-Widget listItems({required name, location, imageUrl, details}) {
+
+  Widget listItems({required name, location, imageUrl, details}) {
     return GestureDetector(
       child: Card(
         margin: EdgeInsets.only(left: 20, right: 20, top: 10),
@@ -58,12 +74,15 @@ Widget listItems({required name, location, imageUrl, details}) {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) =>
-                DetailScreen(name: name, details: details, imageUrl: imageUrl,location: location,),
+            builder: (context) => DetailScreen(
+              name: name,
+              details: details,
+              imageUrl: imageUrl,
+              location: location,
+            ),
           ),
         );
       },
     );
   }
-  
 }
