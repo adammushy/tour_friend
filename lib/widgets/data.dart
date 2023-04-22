@@ -70,8 +70,8 @@ class Hotel {
 final List<Hotel> hotels = [
   Hotel(
     imageUrl: 'assets/images/hyatt.jpg',
-    name: 'Hotel 0',
-    address: '404 Great St',
+    name: 'Hyatt Regency Hotel',
+    address: 'Kivukoni,Dar es salaam',
     price: 175,
   ),
   Hotel(
