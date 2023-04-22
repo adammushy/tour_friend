@@ -34,21 +34,21 @@ class OnboardingContents {
 
 List<OnboardingContents> contents = [
   OnboardingContents(
-    title: "Karibu katika application yetu ya Smart Kilimo",
+    title: "Welcome to  Tour Friend",
     image: "assets/icons/nature1.png",
-    desc: "Kumbuka kujisajili kama wewe ni mkulima iliuweze kupata uwezo wa kupata taarifa.",
+    desc: "The app that will give you all you the things you want to plan your next vacation in Tanzania",
   ),
   OnboardingContents(
-    title: "Furahia huduma katika mfumo wetu.",
+    title: "Enjoy our five star service",
     image: "assets/icons/mountain.png",
     desc:
-        "Unaweza kupata taarifa mbalimbali zinazohusu masuala ya kilimo.",
+        "Get to know the nature of Tanzania",
   ),
   OnboardingContents(
-    title: "Karibu kwenye mfumo uwe mkulima wa kisasa",
+    title: "Welcome to Tanzania",
         image: "assets/icons/nature2.png",
 
-    desc: "karibu ujisajili.",
+    desc: "",
   ),
 ];
 

@@ -22,7 +22,7 @@ class _NationalParkScreenState extends State<NationalParkScreen> {
           child: ListView(
         children: [
           ItemList(
-            name: "maharaja",
+            name: "Maharaja",
             imageUrl: "assets/images/tour.png",
             location: "India",
             details: "holla",

@@ -57,7 +57,8 @@ class HotelWidget extends StatelessWidget {
                     ?.copyWith(fontWeight: FontWeight.bold),
               ),
               Text(
-                "See all",
+                "",
+                // "See all",
                 style: Theme.of(context).textTheme.headline6?.copyWith(
                     fontWeight: FontWeight.bold,
                     color: ColorItems.blueChaose,
