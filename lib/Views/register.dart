@@ -1,25 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:tour_friend/Views/homescreen.dart';
-import 'register.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({super.key, required this.title});
+class RegisterPage extends StatefulWidget {
+  const RegisterPage({super.key, required this.title});
 
   final String title;
 
   @override
-  State<LoginPage> createState() => LoginPageState();
+  State<RegisterPage> createState() => RegisterPageState();
 }
 
-class LoginPageState extends State<LoginPage> {
+class RegisterPageState extends State<RegisterPage> {
+  TextEditingController name = TextEditingController();
   TextEditingController email = TextEditingController();
-  TextEditingController password = TextEditingController();
+  TextEditingController password1 = TextEditingController();
+  TextEditingController password2 = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Login'),
+        title: const Text('Register'),
         backgroundColor: Colors.blueGrey[900],
       ),
       body: Padding(
@@ -30,7 +30,7 @@ class LoginPageState extends State<LoginPage> {
               alignment: Alignment.center,
               padding: const EdgeInsets.all(10),
               child: const Icon(
-                Icons.lock_open,
+                Icons.account_circle_outlined,
                 size: 82,
               ),
             ),
@@ -38,8 +38,18 @@ class LoginPageState extends State<LoginPage> {
               alignment: Alignment.center,
               padding: const EdgeInsets.all(10),
               child: const Text(
-                'Log In',
+                'Register',
                 style: TextStyle(fontSize: 32),
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.all(10),
+              child: TextField(
+                controller: name,
+                decoration: const InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'Full Name',
+                ),
               ),
             ),
             Container(
@@ -55,7 +65,7 @@ class LoginPageState extends State<LoginPage> {
             Container(
               padding: const EdgeInsets.all(10),
               child: TextField(
-                controller: password,
+                controller: password1,
                 decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: 'Password',
@@ -64,33 +74,33 @@ class LoginPageState extends State<LoginPage> {
             ),
             Container(
               padding: const EdgeInsets.all(10),
+              child: TextField(
+                controller: password2,
+                decoration: const InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'Confirm Password',
+                ),
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.all(10),
               height: 70,
               child: ElevatedButton(
-                child: const Text('Login'),
+                child: const Text('Register'),
                 onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) {
-                      return const HomePage();
-                    }),
-                  );
+                  print('I\'m Clicked');
                 },
               ),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text('Do not have an account?'),
+                const Text('Already have an account?'),
                 TextButton(
                     onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) {
-                          return const RegisterPage(title: 'Register');
-                        }),
-                      );
+                      Navigator.pop(context);
                     },
-                    child: const Text('Register')),
+                    child: const Text('Login')),
               ],
             ),
             Container(
@@ -107,7 +117,7 @@ class LoginPageState extends State<LoginPage> {
                     image: AssetImage('assets/images/google.png'),
                   ),
                   Text(
-                    'Log In with Google',
+                    'Register with Google',
                     style: TextStyle(),
                   )
                 ],
