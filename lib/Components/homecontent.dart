@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../widgets/data.dart';
-import '../widgets/style.dart';
+// import '../widgets/style.dart';
 import '../Views/homescreen.dart';
 
 class Destination {
@@ -53,13 +53,13 @@ class HotelWidget extends StatelessWidget {
                 "Exclusive Hotels",
                 style: Theme.of(context)
                     .textTheme
-                    .headline5
+                    .headlineSmall
                     ?.copyWith(fontWeight: FontWeight.bold),
               ),
               Text(
                 "",
                 // "See all",
-                style: Theme.of(context).textTheme.headline6?.copyWith(
+                style: Theme.of(context).textTheme.titleLarge?.copyWith(
                     fontWeight: FontWeight.bold,
                     color: ColorItems.blueChaose,
                     letterSpacing: 0),
@@ -134,12 +134,12 @@ class HotelWidget extends StatelessWidget {
                 children: [
                   Text(
                     hotel.name,
-                    style: Theme.of(context).textTheme.subtitle1?.copyWith(
+                    style: Theme.of(context).textTheme.titleMedium?.copyWith(
                         color: Colors.black, fontWeight: FontWeight.bold),
                   ),
                   Text(
                     "${hotel.address}",
-                    style: Theme.of(context).textTheme.subtitle1?.copyWith(
+                    style: Theme.of(context).textTheme.titleMedium?.copyWith(
                         color: Colors.black, fontWeight: FontWeight.bold),
                   ),
                 ],
@@ -155,7 +155,7 @@ class HotelWidget extends StatelessWidget {
                       icon: Icon(Icons.shopify_outlined)),
                   Text(
                     "\$${hotel.price}/night",
-                    style: Theme.of(context).textTheme.subtitle1?.copyWith(
+                    style: Theme.of(context).textTheme.titleMedium?.copyWith(
                         color: Colors.black, fontWeight: FontWeight.bold),
                   ),
                 ],

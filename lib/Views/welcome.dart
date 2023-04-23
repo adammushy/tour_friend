@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tour_friend/Views/loginscreen.dart';
 import '../widgets/data.dart';
 import '../Components/styles.dart';
 import '../Views/homescreen.dart';
@@ -146,7 +147,7 @@ class _WelcomeState extends State<Welcome> {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => HomePage()));
+                                      builder: (context) => LoginPage(title: 'Login')),);
                             },
                             child: const Text("START",style:TextStyle(color: Colors.white)),
                             style: ElevatedButton.styleFrom(
