@@ -3,6 +3,8 @@ import 'package:tour_friend/Views/loginscreen.dart';
 import '../widgets/data.dart';
 import '../Components/styles.dart';
 import '../Views/homescreen.dart';
+import '../Views/loginscreen.dart';
+import '../Views/register.dart';
 
 class Welcome extends StatefulWidget {
   const Welcome({Key? key}) : super(key: key);
@@ -69,7 +71,6 @@ class _WelcomeState extends State<Welcome> {
                     child: Column(
                       children: [
                         Image.asset(
-                           
                           contents[i].image,
                           height: SizeConfig.blockV! * 25,
                         ),
@@ -108,7 +109,7 @@ class _WelcomeState extends State<Welcome> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => HomePage(),
+                                    builder: (context) => LoginPage(),
                                   ),
                                 );
                               },
@@ -145,11 +146,14 @@ class _WelcomeState extends State<Welcome> {
                           child: ElevatedButton(
                             onPressed: () {
                               Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => LoginPage(title: 'Login')),);
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => LoginPage(),
+                                ),
+                              );
                             },
-                            child: const Text("START",style:TextStyle(color: Colors.white)),
+                            child: const Text("START",
+                                style: TextStyle(color: Colors.white)),
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.black,
                               shape: RoundedRectangleBorder(
@@ -193,9 +197,11 @@ class _WelcomeState extends State<Welcome> {
                                     curve: Curves.easeIn,
                                   );
                                 },
-                                child: const Text("NEXT",style: TextStyle(color: Colors.white),),
+                                child: const Text(
+                                  "NEXT",
+                                  style: TextStyle(color: Colors.white),
+                                ),
                                 style: ElevatedButton.styleFrom(
-                                  
                                   backgroundColor: Colors.black,
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(50),

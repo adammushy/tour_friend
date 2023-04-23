@@ -3,9 +3,9 @@ import 'package:tour_friend/Views/homescreen.dart';
 import 'register.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({super.key, required this.title});
+  const LoginPage({super.key});
 
-  final String title;
+  // final String title;
 
   @override
   State<LoginPage> createState() => LoginPageState();
