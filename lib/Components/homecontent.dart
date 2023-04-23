@@ -148,11 +148,12 @@ class HotelWidget extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.end,
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  IconButton(
-                      onPressed: () {
-                        return null;
-                      },
-                      icon: Icon(Icons.shopify_outlined)),
+                  IconButton(hoverColor: Colors.blue,
+                    onPressed: () {
+                      return null;
+                    },
+                    icon: Icon(Icons.shopify_outlined),
+                  ),
                   Text(
                     "\$${hotel.price}/night",
                     style: Theme.of(context).textTheme.subtitle1?.copyWith(

@@ -52,13 +52,11 @@ class _MostPopularState extends State<MostPopular> {
                     Destination destination = destinations[index];
                     return GestureDetector(
                       child: Padding(
-                        
                         padding: EdgeInsets.all(15.0),
                         child: Container(
                           // decoration: BoxDecoration(boxShadow:[BoxShadow(color: Colors.grey.shade500,offset: Offset(0, 2.0),blurRadius: 6.0)]),
 
                           child: Stack(
-                            
                             children: [
                               _whiteContainer(context, destination),
                               _image(destination),
@@ -82,12 +80,10 @@ class _MostPopularState extends State<MostPopular> {
     return Positioned(
       top: 150,
       left: 10,
-
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-          
             "",
             // "${destination.name}",
             style: Theme.of(context)
@@ -110,7 +106,6 @@ class _MostPopularState extends State<MostPopular> {
   Positioned _image(Destination destination) {
     return Positioned(
       child: Hero(
-        
         tag: destination.imageUrl,
         child: ClipRRect(
           borderRadius: BorderRadius.circular(20),
@@ -149,17 +144,20 @@ class _MostPopularState extends State<MostPopular> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                   Text(
-                // " ",
-                "${destination.name}",
-                style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                    color: Color.fromARGB(255, 8, 8, 8), fontWeight: FontWeight.bold),
-              ), Text(
-                // " ",
-                "${destination.city}",
-                style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                    color: Color.fromARGB(255, 8, 8, 8), fontWeight: FontWeight.bold),
-              ),
+                  Text(
+                    // " ",
+                    "${destination.name}",
+                    style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                        color: Color.fromARGB(255, 8, 8, 8),
+                        fontWeight: FontWeight.bold),
+                  ),
+                  Text(
+                    // " ",
+                    "${destination.city}",
+                    style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                        color: Color.fromARGB(255, 8, 8, 8),
+                        fontWeight: FontWeight.bold),
+                  ),
                   // Text(
                   //   "${destination.description}",
                   //   style: Theme.of(context).textTheme.bodyLarge?.copyWith(
@@ -167,14 +165,23 @@ class _MostPopularState extends State<MostPopular> {
                   // ),
                 ],
               ),
-              SizedBox(width: 2,),
-
+              SizedBox(
+                width: 2,
+              ),
               Column(
-                 mainAxisAlignment: MainAxisAlignment.end,
-                  crossAxisAlignment: CrossAxisAlignment.end,
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                 
-                  IconButton(onPressed: (){return null;}, icon:Icon(Icons.shopping_cart,semanticLabel: "Book",)),
+                  IconButton(
+                    focusColor: Colors.blue,
+                    hoverColor: Colors.amberAccent,
+                      onPressed: () {
+                        return null;
+                      },
+                      icon: Icon(
+                        Icons.shopping_cart,
+                        semanticLabel: "Book",
+                      )),
                 ],
               )
             ],
