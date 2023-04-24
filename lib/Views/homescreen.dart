@@ -104,6 +104,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
               const SizedBox(
                 height: 20.0,
               ),
+              // const MostPopular(city:'', details: '', name: '', imageUrl: '',),
               const MostPopular(),
               const SizedBox(
                 height: 20.0,

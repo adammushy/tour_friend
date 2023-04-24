@@ -6,6 +6,7 @@ import '../Views/detailScreen.dart';
 import '../Components/homecontent.dart';
 
 class MostPopular extends StatefulWidget {
+  
   const MostPopular({super.key});
 
   @override
@@ -51,6 +52,18 @@ class _MostPopularState extends State<MostPopular> {
                   itemBuilder: ((context, index) {
                     Destination destination = destinations[index];
                     return GestureDetector(
+                      // onTap: () {
+                      //   Navigator.push(
+                      //     context,
+                      //     MaterialPageRoute(
+                      //       builder: (context) => DetailScreen(
+                      //           name: name,
+                      //           location: location,
+                      //           imageUrl: imageUrl,
+                      //           details: details),
+                      //     ),
+                      //   );
+                      
                       child: Padding(
                         padding: EdgeInsets.all(15.0),
                         child: Container(
@@ -173,8 +186,8 @@ class _MostPopularState extends State<MostPopular> {
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   IconButton(
-                    focusColor: Colors.blue,
-                    hoverColor: Colors.amberAccent,
+                      focusColor: Colors.blue,
+                      hoverColor: Colors.amberAccent,
                       onPressed: () {
                         return null;
                       },

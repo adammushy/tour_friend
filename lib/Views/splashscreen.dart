@@ -21,7 +21,7 @@ class _SplashScreenState extends State<SplashScreen>
   // late final int loginCount;
   late final AnimationController _controller = AnimationController(
     vsync: this,
-    duration: const Duration(seconds: 10),
+    duration: const Duration(seconds: 5),
   )..repeat();
   
   // get loginCount => null;
@@ -35,7 +35,7 @@ class _SplashScreenState extends State<SplashScreen>
   void initState() {
     super.initState();
     Timer(
-      const Duration(seconds: 10),
+      const Duration(seconds: 5),
       () => Navigator.of(context).pushReplacement(
         MaterialPageRoute(
           builder: (BuildContext context) => const Welcome(),
