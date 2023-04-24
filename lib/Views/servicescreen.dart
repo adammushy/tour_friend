@@ -49,7 +49,8 @@ class _ServiceScreenState extends State<ServiceScreen> {
               children: [
                 Center(
                   child: InkWell(
-                    child: Image.asset(semanticLabel:"List Category" ,
+                    child: Image.asset(
+                      semanticLabel: "List Category",
                       'assets/tour.png',
                       height: 100,
                       width: 100,
@@ -85,6 +86,14 @@ class _ServiceScreenState extends State<ServiceScreen> {
                           image: 'assets/images/tour.png',
                           index: 2,
                         ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        makeItem(
+                          name: "Islands",
+                          image: 'assets/images/tour.png',
+                          index: 3,
+                        ),
                       ],
                     ),
                   ),
@@ -94,7 +103,7 @@ class _ServiceScreenState extends State<ServiceScreen> {
           ],
         ),
       ),
-      
+
       floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
       floatingActionButton: FloatingActionButton(
           backgroundColor: ColorItems.blueChaose,
@@ -102,9 +111,8 @@ class _ServiceScreenState extends State<ServiceScreen> {
           child: const Icon(Icons.search)),
       bottomNavigationBar: _buildBottomBar(),
     );
-
   }
-  
+
   BubbleBottomBar _buildBottomBar() {
     return BubbleBottomBar(
       opacity: .2,
@@ -163,7 +171,8 @@ class _ServiceScreenState extends State<ServiceScreen> {
             title: Text("Menu"))
       ],
     );
-  }  
+  }
+
   @override
   Widget makeItem({name, image, index}) {
     return Row(
@@ -223,10 +232,7 @@ class _ServiceScreenState extends State<ServiceScreen> {
         ),
       ],
     );
-
   }
-
-  
 }
 
 class ColorItems {
