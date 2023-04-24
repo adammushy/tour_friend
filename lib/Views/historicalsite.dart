@@ -34,20 +34,31 @@ class _HistoricalSiteState extends State<HistoricalSite> {
             //   imageUrl: "",
             // ),
             listItems(
-                name: "Bagamoyo",
-                imageUrl: "assets/images/tour.png",
-                details: "msoga oner",
-                location: "Dar es salaam"),
+                name: "Christ Church Cathedral",
+                imageUrl: "assets/images/church.jpg",
+                details:
+                    '''Built over the slave market remarkable architecture. 
+                Some columns were put in upside down when the architect was away and guides will point them out. 
+                Livingston funeral and the Livingstone cross mad from wood of the tree he was buried beneath. 
+                Striking to see the preserved portion of the slave market under the church.''',
+                location: "Stone town, Zanzibar"),
             listItems(
-                name: "Baitu la Ajabu",
-                imageUrl: "assets/images/tour.png",
-                location: "Zanzibar",
-                details: "karibu zanzibar"),
+                name: "Olduvai Gorge",
+                imageUrl: "assets/images/olduvai.jpg",
+                location: "Ngorongoro Conservation",
+                details:
+                    '''This is one of the most important archaeological site on earth. 
+                The geological strata exposed in the gorge reveal a remarkable record of animal and human evolution from about 2 million until 15,000 years ago. 
+                Among the significant finds from Olduvai are the range of stone tool types, the thousands of animal fossils- both extinct and extant species- and fossil bones of hominids (pre- Homo sapiens) and early Homo sapiens. 
+                The hominid fossils show the evolution of humankind over a 2 million year time span and provide a sense of our recent emergence in the world as modern humans.'''),
             listItems(
-                name: "Kondoa Irangi",
-                imageUrl: "assets/images/tour.png",
-                location: "Dodoma",
-                details: "michorro ya mapangoni"),
+                name: "Slave Market",
+                imageUrl: "assets/images/slave.jpg",
+                location: "Stone Town,Zanzibar",
+                details:
+                    '''The Heritage Centre therefore among other things aims at promoting tolerance, reconciliation and an inclusive society, bridging social and ethnic divides by telling the story of this dark chapter in the region’s history in an open and factual way. 
+                The creation of the Heritage Centre, and making it accessible to school children, who are the country’s future leaders, is also aimed to promote interfaith and inter-communal dialogue and understanding. Furthermore The Site is an important tourist destination, and by improving visitors’ facilities at the site and making it more informative and stimulating, the tourism industry as a whole will benefit, creating jobs and wealth, and helping to reduce poverty. 
+                The Heritage Centre among other things is also benefiting many people as it is a great opportunity to promote interfaith relations in Zanzibar.'''),
           ],
         )));
   }

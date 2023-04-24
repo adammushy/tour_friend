@@ -7,6 +7,7 @@ import 'package:tour_friend/Views/nationalparkscreen.dart';
 import 'package:tour_friend/Views/historicalsite.dart';
 // import 'package:tour_friend/Views/homescreen.dart';
 import '../Views/profilescreen.dart';
+import '../Views/water.dart';
 
 class ServiceScreen extends StatefulWidget {
   const ServiceScreen({super.key});
@@ -98,7 +99,7 @@ class _ServiceScreenState extends State<ServiceScreen> {
                           height: 20,
                         ),
                         makeItem(
-                          name: "Islands",
+                          name: "Islands and Water Bodies",
                           image: 'assets/images/tour.png',
                           index: 3,
                         ),
@@ -234,6 +235,10 @@ class _ServiceScreenState extends State<ServiceScreen> {
               } else if (name == "Historical Sites") {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => HistoricalSite()));
+              }
+              else if (name == "Islands and Water Bodies") {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => WaterBodies()));
               }
             },
           ),
