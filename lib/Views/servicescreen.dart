@@ -6,6 +6,7 @@ import 'package:tour_friend/Views/welcome.dart';
 import 'package:tour_friend/Views/nationalparkscreen.dart';
 import 'package:tour_friend/Views/historicalsite.dart';
 // import 'package:tour_friend/Views/homescreen.dart';
+import '../Views/profilescreen.dart';
 
 class ServiceScreen extends StatefulWidget {
   const ServiceScreen({super.key});
@@ -33,7 +34,14 @@ class _ServiceScreenState extends State<ServiceScreen> {
             context,
             MaterialPageRoute(
               builder: (context) => HomePage(),
-            ));
+            ),);
+      }
+      else if (index == 2) {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => ProfileScreen(),
+            ),);
       }
     });
   }

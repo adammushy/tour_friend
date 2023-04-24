@@ -7,6 +7,7 @@ import 'package:tour_friend/Views/historicalsite.dart';
 import 'package:tour_friend/Views/welcome.dart';
 import '../widgets/mostpopular.dart';
 import '../Components/homecontent.dart';
+import '../Views/profilescreen.dart';
 // import 'package:travel_ui/widgets/destinations.dart';
 // import 'package:travel_ui/widgets/hotel.dart';
 
@@ -69,11 +70,21 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
       _currentIndex = index!;
       if (index == 3) {
         Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => ServiceScreen(),
-            ));
+          context,
+          MaterialPageRoute(
+            builder: (context) => ServiceScreen(),
+          ),
+        );
       }
+      else if (index == 2) {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => ProfileScreen(),
+          ),
+        );
+      }
+      
     });
   }
 
@@ -218,9 +229,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                     builder: (context) => HistoricalSite(),
                   ),
                 );
-              }
-              else if (index == 2){
-                
+              } else if (index == 2) {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
